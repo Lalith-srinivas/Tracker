@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE 2027 CS & IT Preparation Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="logo-container">
+      <div class="logo-badge">GATE '27</div>
+      <h1>CS & IT Preparation Hub</h1>
+    </div>
+    <div class="header-metrics">
+      <div class="metric-pill">
+        <span class="pill-label">STREAK:</span>
+        <span id="header-streak-count" class="pill-value">0 🔥</span>
+      </div>
+      <div class="metric-pill">
+        <span class="pill-label">COMPLETED:</span>
+        <span id="header-progress-pct" class="pill-value">0%</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Wrapper -->
+  <main class="app-container">
+    
+    <!-- Motivation Banner -->
+    <section class="banner-card motivation-card">
+      <div class="banner-tag">DAILY MOTIVATION</div>
+      <blockquote id="daily-quote-text">"Consistency beats motivation."</blockquote>
+    </section>
+
+    <!-- Top Dashboard Metrics Grid -->
+    <section class="dashboard-grid">
+      <div class="dash-card card-yellow">
+        <h3>Overall Progress</h3>
+        <div class="dash-value" id="dash-overall-pct">0%</div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="dash-overall-bar" style="width: 0%;"></div>
+        </div>
+        <p class="dash-sub" id="dash-days-ratio">0 / 117 Days Completed</p>
+      </div>
+
+      <div class="dash-card card-green">
+        <h3>Current Streak</h3>
+        <div class="dash-value" id="dash-current-streak">0 Days</div>
+        <p class="dash-sub" id="dash-longest-streak">Longest: 0 Days</p>
+      </div>
+
+      <div class="dash-card card-pink">
+        <h3>Days Remaining</h3>
+        <div class="dash-value" id="dash-days-remaining">117</div>
+        <p class="dash-sub">Target: Dec 31, 2026</p>
+      </div>
+
+      <div class="dash-card card-cyan">
+        <h3>Consistency Score</h3>
+        <div class="dash-value" id="dash-consistency-score">100%</div>
+        <p class="dash-sub" id="dash-weekly-goal">Weekly Goal: 7/7 Days</p>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="app-tabs">
+      <button class="tab-btn active" data-tab="planner-view">📅 Daily Planner</button>
+      <button class="tab-btn" data-tab="revisions-view">🔄 Revisions Due</button>
+      <button class="tab-btn" data-tab="subjects-view">📚 Subject Progress</button>
+      <button class="tab-btn" data-tab="analytics-view">📊 Analytics</button>
+      <button class="tab-btn" data-tab="achievements-view">🏆 Badges</button>
+    </nav>
+
+    <!-- TAB 1: DAILY PLANNER -->
+    <section id="planner-view" class="tab-content active">
+      <div class="planner-controls">
+        <button id="btn-prev-day" class="btn btn-secondary">← Previous</button>
+        <div class="date-picker-wrapper">
+          <label for="day-select-dropdown">Jump to Day:</label>
+          <select id="day-select-dropdown" class="neo-select"></select>
+        </div>
+        <button id="btn-next-day" class="btn btn-secondary">Next →</button>
+        <button id="btn-today" class="btn btn-accent">Jump to Today</button>
+        <button id="btn-auto-recover" class="btn btn-warning">⚡ Recover Missed Days</button>
+      </div>
+
+      <!-- Single Day Card Container -->
+      <div id="day-card-container">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- TAB 2: REVISIONS DUE -->
+    <section id="revisions-view" class="tab-content">
+      <div class="section-card card-cyan">
+        <h2>Spaced Repetition Schedule</h2>
+        <p>Topics are queued automatically for review after 1 Day, 7 Days, and 30 Days of primary completion.</p>
+      </div>
+      <div id="revision-lists-container" class="revision-grid">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- TAB 3: SUBJECT PROGRESS -->
+    <section id="subjects-view" class="tab-content">
+      <div id="subject-cards-list" class="subject-grid">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- TAB 4: ANALYTICS -->
+    <section id="analytics-view" class="tab-content">
+      <div class="analytics-grid">
+        <div class="dash-card card-white">
+          <h3>Weekly Study Performance</h3>
+          <div id="weekly-report-container" class="weekly-report-list">
+            <!-- Rendered dynamically via JS -->
+          </div>
+        </div>
+        <div class="dash-card card-white">
+          <h3>Subject Breakdown Metrics</h3>
+          <div id="subject-analytics-container">
+            <!-- Rendered dynamically via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: ACHIEVEMENTS -->
+    <section id="achievements-view" class="tab-content">
+      <div id="achievements-grid" class="badges-grid">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>GATE 2027 Offline Preparation Engine | Pure HTML, CSS & Modular JS | Data Stored Locally</p>
+  </footer>
+
+  <!-- Application Script Files -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
